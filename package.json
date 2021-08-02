@@ -30,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@moon/wreck",
+  "name": "wreck",
   "author": "zack novosad",
   "module": "dist/wreck.esm.js",
   "size-limit": [
