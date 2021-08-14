@@ -24,7 +24,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "wreck",
+  "name": "@nvsd/wreck",
   "author": "zack novosad",
   "module": "dist/wreck.esm.js",
   "size-limit": [
