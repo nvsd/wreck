@@ -1,15 +1,16 @@
-import { RequestOptions } from 'https';
-import { Options } from './types';
+import { RequestOptions } from "https";
+import { Options } from "./types";
 
 type Params = {
   [key: string]: string | number | boolean | undefined | null;
 };
 
+// Check null
 const check = (value: string | number | boolean | undefined | null) => {
   if (
-    typeof value === 'string' ||
-    typeof value === 'number' ||
-    typeof value === 'boolean'
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean"
   ) {
     return true;
   } else if (typeof value === null || typeof value === undefined) {
@@ -20,18 +21,18 @@ const check = (value: string | number | boolean | undefined | null) => {
 };
 
 const makeQueryParams = (params?: Params) => {
-  if (!params) return '';
+  if (!params) return "";
 
   return Object.entries(params)
-    .map(([key, value]) => `${key}=${check(value) ? value : ''}`)
-    .join('&');
+    .map(([key, value]) => `${key}=${check(value) ? value : ""}`)
+    .join("&");
 };
 
 const makePath = (path?: string | null, queryParams?: string) => {
   let _path = path;
-  if (!path) return '';
+  if (!path) return "";
   if (!queryParams) return path;
-  if (path.includes('://')) _path = path.split('://')[1];
+  if (path.includes("://")) _path = path.split("://")[1];
 
   return `${_path}?${queryParams}`;
 };
